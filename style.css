@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
+
+/* Definición de variables de colores */
+:root {
+    --color-primary-dark: #430c05;
+    --color-primary-light: #d46f4d;
+    --color-accent: #ffbf66;
+    --color-secondary-dark: #08c5d1;
+    --color-secondary-light: #00353f;
+    --color-white: #ffffff;
+    --color-gray-light: #cfc9c9;
+    --color-gray-dark: #333333;
+    --color-danger: #ff6f61;
+    --color-hover: #ff9e92;
+}
+
+/* Cuerpo y fondo de la página */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-gray-light);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+header {
+    background-image: url(/img/fonfo_header.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    max-width: 100%;
+    height: 400px;
+    max-height: 100%;
+    color: var(--color-white);
+    padding: 15px 0;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    top: 0;
+    z-index: 1;
+   
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Capa oscura semitransparente */
+    z-index: -1;
+}
+
+header img {
+    width: 450px;
+    margin-bottom: 10px;
+}
+nav {
+   position: absolute;
+    top: 350px;  /* Lo mantiene pegado a la parte superior del contenedor al hacer scroll */
+    width: 100%;
+    background-color: transparent;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    padding: 10px 0;
+    z-index: 20;
+    transition: all 0.3s ease  ;
+  }
+
+  /* Cuando el usuario hace scroll */
+  nav.scroll-nav {
+    background-color:rgba(0, 0, 0, 0.5);;  /* Cambia el color de fondo cuando está fijo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);  /* Agrega una sombra si lo deseas */
+    padding: 10px 0;
+    position: fixed;
+    top: 0px; 
+    left: 0;
+    z-index: 20;   
+    transition: all 0.3s ease  ;
+  }
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+   
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: var(--color-hover);
+}
+
+/* Estilos generales de la página */
+section {
+    padding: 2rem;
+}
+
+main {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+main h2{
+    font-size: 2.9rem;
+    color: var(--color-primary-light);
+    text-align: center;
+}
+/* Contenedor que envuelve la galería */
+.gallery-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Estilo de la galería que contiene las imágenes */
+  .gallery {
+    display: flex;
+    justify-content: flex-start; /* Para alinear las tarjetas hacia la izquierda */
+    gap: 20px; /* Separación entre las tarjetas */
+    overflow:hidden;
+    padding: 10px; /* Agrega un poco de espacio alrededor */
+    transition: transform 0.5s ease;
+  }
+  
+  /* Estilo de cada imagen (gatito) */
+  .gatito {
+    min-width: 300px;  /* Ancho de cada imagen */
+    margin:  0;
+    padding: 15px;     /* Espaciado entre imágenes */
+    transition: transform 0.5s ease;
+    background-color: var(--color-hover);
+    border-radius: 10px;
+    text-align: start;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+  }
+  
+  .gatito:hover {
+    background-color: var(--color-primary-light);
+    transform: scale(1.03);
+  }
+
+  .gatito img:hover {
+    transform: scale(1.1);
+  }
+
+ 
+  .gatito img {
+    width: 100%;
+    border-radius: 8px;
+    height: auto;
+    transition: transform 0.5s ease;
+  }
+  .gatito strong{
+    color: var(--color-primary-dark);
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+  }
+  .gatito p{
+    color: var(--color-secondary-light);
+    margin-left: 20px;
+    font-weight: 600;
+  }
+  /* Botones de control */
+  .controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+  
+  .controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .controls button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.2);
+  }
+  .controls button:active {
+    transform: scale(1.1); 
+}
+
+/* Estilo para el formulario */
+/* Estilos generales para el formulario */
+#candidatura {
+    background-color: var(--color-white); /* Fondo claro para la sección */
+    padding: 30px;
+    border-radius: 8px; /* Bordes redondeados */
+    max-width: 600px; /* Ancho máximo */
+    margin: 40px auto; /* Centrado en la página con margen superior */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra suave */
+  }
+  
+  #candidatura h2 {
+    text-align: center;
+    color:var(--color-primary-light);
+    margin-bottom: 20px;
+    font-size: 1.rem;
+    font-weight: 800;
+  }
+  
+  /* Estilo para las etiquetas de los inputs */
+  #candidatura label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #2c3e50; /* Color oscuro para las etiquetas */
+    font-weight: 600;
+  }
+  
+  /* Estilo para los campos de texto */
+  #candidatura input[type="text"],
+  #candidatura input[type="email"],
+  #candidatura textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px; /* Espacio entre los campos */
+    border: 1px solid #bdc3c7; /* Borde gris claro */
+    border-radius: 6px; /* Bordes redondeados */
+    font-size: 16px;
+    background-color: #fff;
+    transition: border-color 0.3s ease; /* Transición suave para el borde */
+    box-sizing: border-box; /* Ajustar el ancho del input al contenido */
+    resize: vertical; /* Ajustar el alto del textarea según el contenido */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+
+  }
+  
+  #candidatura input[type="text"]:focus,
+  #candidatura input[type="email"]:focus,
+  #candidatura textarea:focus {
+    border-color: var(--color-secondary-dark); /* Borde color amarillo al hacer foco */
+    outline: none;
+  }
+  
+  /* Estilo para el botón de envío */
+  #candidatura button {
+    background-color: var(--color-secondary-dark);
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición de color */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: background-color 0.3s ease; /* Transición de color */
+    margin-top: 20px; /* Espacio entre el botón y el mensaje de éxito o error */
+  }
+  
+  #candidatura button:hover {
+    background-color: var(--color-accent); /* Color más oscuro cuando se pasa el ratón */
+  }
+  
+  /* Estilo para las alertas de error o éxito (si es necesario) */
+  #candidatura .alert {
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #dff0d8; /* Fondo verde claro para éxito */
+    color: #3c763d; /* Color verde oscuro para el texto */
+    border-radius: 6px;
+    border: 1px solid #d0e9c6; /* Borde verde */
+    text-align: center;
+  }
+  
+  /* Estilo para pantallas pequeñas */
+  @media screen and (max-width: 600px) {
+    #candidatura {
+      padding: 20px;
+      margin: 20px;
+    }
+  
+    #candidatura h2 {
+      font-size: 20px; /* Tamaño más pequeño del título en pantallas pequeñas */
+    }
+  }
+  
+
+button {
+    background-color: var(--color-secondary-dark);
+    color: var(--color-accent);
+    font-weight: 600;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+button:hover {
+    background-color: var(--color-accent);
+    color: var(--color-primary-dark);
+}
+/* Estilos generales para el footer */
+footer {
+    background-color: #2c3e50; /* Color de fondo oscuro */
+    color: white; /* Color del texto */
+    padding: 20px 0; /* Espaciado arriba y abajo */
+    text-align: center; /* Centra el texto */
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+  }
+  
+  footer a {
+    color: #ecf0f1; /* Color de los enlaces */
+    text-decoration: none; /* Quita el subrayado */
+    font-weight: bold; /* Hace que los enlaces sean negritas */
+  }
+  
+  footer a:hover {
+    color: #f39c12; /* Color cuando el enlace está en hover */
+    text-decoration: underline; /* Subraya el enlace cuando el ratón pasa por encima */
+  }
+  
+  /* Estilo para los párrafos dentro del footer */
+  footer p {
+    margin: 10px 0; /* Espaciado entre los párrafos */
+  }
+  
+  /* Estilo para la fundación en el footer */
+  footer .fundacion {
+    font-size: 12px; /* Fuente más pequeña */
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  footer .fundacion a {
+    margin-left: 5px; /* Separación entre el texto y el enlace */
+  }
+  
+  /* Ajustes para pantallas más pequeñas */
+  @media screen and (max-width: 600px) {
+    footer {
+      font-size: 12px; /* Reduce el tamaño de fuente en dispositivos pequeños */
+      padding: 15px 0; /* Menos padding en pantallas pequeñas */
+    }
+  }
+  
+
+/* Media Queries para diseño responsive */
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .card {
+        flex: 1 1 100%;
+    }
+
+    header {
+        height: 300px;
+    }
+
+    header img {
+        width: 200px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .card h2 {
+        font-size: 1.6rem;
+    }
+
+    form {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card {
+        flex: 1 1 100%;
+        margin: 10px 0;
+    }
+
+    header {
+        height: 250px;
+    }
+
+    header img {
+        width: 150px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .card h2 {
+        font-size: 1.4rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+
+    button {
+        padding: 0.8rem;
+    }
+}

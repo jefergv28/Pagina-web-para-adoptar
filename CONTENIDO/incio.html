@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopción de Gatitos - [Nombre de la página]</title>
+    <link rel="stylesheet" href="/css/inicio.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo de Adopción de Gatitos">
+        </div>
+        <h1>¡Haz la diferencia, adopta un gatito hoy!</h1>
+    </header>
+
+    <main>
+        <section id="adopta" class="adopta-gatitos">
+            <h2>Conoce a Nuestros Gatitos en Adopción</h2>
+            <div class="gatitos">
+                <!-- Aquí se agregarían los gatitos disponibles en adopción -->
+                <div class="gatito">
+                    <img src="gatito1.jpg" alt="Gatito 1">
+                    <p>Nombre: Miau</p>
+                    <p>Edad: 2 años</p>
+                    <button>Ver más</button>
+                </div>
+                <!-- Más gatitos -->
+            </div>
+        </section>
+
+        <section id="candidatura" class="formulario-candidatura">
+            <h2>¿Te gustaría adoptar? ¡Regístrate aquí!</h2>
+            <form action="formulario_adopcion.php" method="POST">
+                <label for="nombre">Tu Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion" required>
+
+                <label for="motivo">¿Por qué deseas adoptar?</label>
+                <textarea id="motivo" name="motivo" required></textarea>
+
+                <button type="submit">Enviar Candidatura</button>
+            </form>
+        </section>
+
+        <section id="seguimiento" class="seguimiento-adopcion">
+            <h2>Seguimiento de Adopción</h2>
+            <p>Ya adoptaste un gatito? Haz seguimiento aquí</p>
+            <!-- Aquí puedes agregar un formulario o enlace para seguimiento -->
+            <button>Ver seguimiento</button>
+        </section>
+    </main>
+<script src="/js/inicio.js"></script>
+    
+</body>
+</html>

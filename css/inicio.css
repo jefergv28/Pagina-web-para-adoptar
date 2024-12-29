@@ -1,0 +1,178 @@
+/* Variables de color */
+:root {
+    --color-principal: #430c05;
+    --color-secundario: #d46f4d;
+    --color-terciario: #ffbf66;
+    --color-accion: #08c5d1;
+    --color-fondo: #00353f;
+    --color-texto: #ffffff;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+header {
+    background-color: var(--color-principal);
+    padding: 20px;
+    text-align: center;
+    color: var(--color-secundario);
+}
+
+header .logo img {
+    width: 150px;
+    height: auto;
+}
+
+header h1 {
+    margin-top: 10px;
+    font-size: 2em;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Sección de gatitos en adopción */
+#adopta {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#adopta h2 {
+    font-size: 2em;
+    color: var(--color-secundario);
+}
+
+.gatitos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.gatito {
+    background-color: var(--color-secundario);
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.gatito:hover {
+    transform: scale(1.05);
+}
+
+.gatito img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.gatito p {
+    margin: 10px 0;
+}
+
+.gatito button {
+    background-color: var(--color-accion);
+    color: var(--color-fondo);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.gatito button:hover {
+    background-color: var(--color-principal);
+}
+
+/* Sección de formulario de candidatura */
+#candidatura {
+    background-color: var(--color-secundario);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#candidatura h2 {
+    font-size: 2em;
+    color: var(--color-principal);
+}
+
+#candidatura form {
+    display: grid;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#candidatura label {
+    font-size: 1.1em;
+}
+
+#candidatura input,
+#candidatura textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--color-principal);
+    width: 100%;
+    font-size: 1em;
+}
+
+#candidatura button {
+    background-color: var(--color-accion);
+    color: var(--color-fondo);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+#candidatura button:hover {
+    background-color: var(--color-principal);
+}
+
+/* Sección de seguimiento */
+#seguimiento {
+    text-align: center;
+}
+
+#seguimiento h2 {
+    font-size: 2em;
+    color: var(--color-secundario);
+}
+
+#seguimiento button {
+    background-color: var(--color-accion);
+    color: var(--color-fondo);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+#seguimiento button:hover {
+    background-color: var(--color-principal);
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-principal);
+    padding: 10px;
+    text-align: center;
+    color: var(--color-secundario);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
